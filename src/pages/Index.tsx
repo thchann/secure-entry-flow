@@ -1,7 +1,8 @@
 import { useState, useRef, useCallback } from "react";
 import { ArrowRight } from "lucide-react";
+import ottoLogo from "@/assets/Otto_cropped.png";
 
-const LOGO_TEXT = "docere";
+const LOGO_TEXT = "Automia";
 const CODE_LENGTH = 4;
 
 const Index = () => {
@@ -60,9 +61,16 @@ const Index = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background p-6">
       {/* Logo */}
-      <h1 className="mb-8 text-4xl font-light tracking-wide text-primary">
-        {LOGO_TEXT}
-      </h1>
+      <div className="mb-8 flex items-center gap-3">
+        <img
+          src={ottoLogo}
+          alt="Automia logo"
+          className="h-10 w-10 object-contain transition-transform duration-500 hover:rotate-[360deg]"
+        />
+        <h1 className="text-4xl tracking-wide text-primary" style={{ fontFamily: "'Amazing Grotesk', sans-serif" }}>
+          {LOGO_TEXT}
+        </h1>
+      </div>
 
       {/* Card */}
       <div
@@ -70,7 +78,7 @@ const Index = () => {
         style={{ boxShadow: "var(--verify-card-shadow)" }}
       >
         <h2 className="text-center text-xl font-semibold text-card-foreground">
-          Welcome to Docere
+          Welcome to Automia
         </h2>
         <p className="mt-1 text-center text-sm text-muted-foreground">
           Enter your access code to continue
@@ -78,9 +86,6 @@ const Index = () => {
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="mt-6 w-full">
-          <label className="mb-2 block text-sm font-medium text-card-foreground">
-            Access Code
-          </label>
 
           {/* OTP Inputs */}
           <div className="flex gap-3 justify-center" onPaste={handlePaste}>
@@ -111,9 +116,6 @@ const Index = () => {
           </button>
         </form>
 
-        <p className="mt-4 text-center text-xs text-muted-foreground">
-          This platform is currently in limited access mode.
-        </p>
       </div>
     </div>
   );
