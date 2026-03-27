@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback } from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import ottoLogo from "@/assets/Otto_cropped.png";
 
@@ -105,7 +106,6 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Submit */}
           <button
             type="submit"
             disabled={!isFilled || isSubmitting}
@@ -114,6 +114,13 @@ const Index = () => {
             {isSubmitting ? "Verifying…" : "Continue"}
             {!isSubmitting && <ArrowRight className="h-4 w-4" />}
           </button>
+          <Link
+            to="/login"
+            className="mt-3 flex w-full items-center justify-center gap-1.5 text-sm font-medium text-[#FF9900] transition-colors hover:text-[#e68a00] hover:underline"
+          >
+            Continue to login page
+            <ArrowRight className="h-4 w-4" aria-hidden />
+          </Link>
         </form>
 
       </div>

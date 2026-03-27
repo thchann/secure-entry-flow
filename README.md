@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Automia
 
-TODO: Document your project here
+Secure entry flow.
